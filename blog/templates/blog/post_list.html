@@ -6,18 +6,15 @@
     	<div>
     		<h1><a href="">Django Daw blog</a></h1>
     	</div>
-    	
-    	<div>
-    	    <p>Publicado:21.05.2017, 08:58</p>
-    	    <h2><a href="">My first post</a></h2>
-    	    <p>pablito clavo un clavito en la calva de un calvito, en la calva de un calvito pablito clavo un clavito</p>
-        </div> 	   
 
+        {%for post in posts %}
         <div>
-            <p>Publicado: 21.05.2017, 08:59</p>
-            <h2><a href="">Mysecond post</a></h2>
-            <p>tres tristes tigres tragaban trigo en un trigal, en un trigal tragaban trigo tres tristes tigres</p>
-        </div>         
+    	    <p>published: {{ posts.published_date }}</p>
+    	    <h1><a href="">{{ post.title}}</a></h1>
+    	    <p>{{ post.text|linebreaksbr }}</p>
+    	</div>     
+        {% endfor %}
+        
     </body>    
 </html>
 
